@@ -1,5 +1,3 @@
-import credentials from './credentials';
-
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -14,10 +12,6 @@ var vig = require('./routes/vig');
 var users = require('./routes/users');
 
 var app = express();
-
-// firebase setup
-var firebase = require('firebase');
-firebase.initializeApp(credentials.firebase);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
