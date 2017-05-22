@@ -20,6 +20,7 @@ router.post('/test', function(req, res, next) {
   const postData = req.body;
   let message = "WRONG, try again...";
   if(postData.myTag) {
+    console.log("SUCCESS! CREATED");
     message = 'CONGRATS! you have passed the test ! You are ready to be deployed! To start, you have to enlist yourself. To create information, you must send a POST request to /enlist with your name. Sample data: {name: "Rahul the godly Brownie"}. To see if you have been enlisted, send a GET request to /enlist and you will see people who are enlisted.';
   }
   res.json({title: 'STEP1', description: message});
