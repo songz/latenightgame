@@ -16,8 +16,9 @@ router.get('/step1', function(req, res, next) {
 });
 
 router.post('/step1', function(req, res, next) {
-  //console.log('REQUEST RECEIVED', req);
-  res.json({title: 'STEP1', description: 'CONGRATS! We are not fineshed.....'});
+  const postData = req.body;
+  console.log('REQUEST RECEIVED', postData);
+  res.json({title: 'STEP1', description: 'CONGRATS! We are not fineshed..... YOU ARE TOO FAST'});
 });
 
 module.exports = router;
