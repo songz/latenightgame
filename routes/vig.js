@@ -1,10 +1,17 @@
 var express = require('express');
 var router = express.Router();
-
+var firebase = require('firebase');
 /* GET home page. */
-router.get('/vig', function(req, res, next) {
-  res.json({title: 'hello', description: 'Hello, welcome to this game. Please send another request every minute to this url for new instructions until further notice. You are getting deployed! '});
+router.post('/enlist', function(req, res, next) {
+  var enlistKey = firebase.database.ref('enlist').push(enlistData);
+
+  res.json({dataId: enlistKey});
+});
+
+router.post('/enlist', function(req, res, next) {
+  var enlistKey = firebase.database.ref('enlist').push(enlistData);
+
+  res.json({dataId: enlistKey});
 });
 
 module.exports = router;
-
