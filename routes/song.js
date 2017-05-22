@@ -15,10 +15,13 @@ router.get('/step1', function(req, res, next) {
   res.json({title: 'STEP1', description: 'CONGRATS! welcome to step one. Take the value of the key myTag and send a POST request /test with an object with key myTag and the same value', myTag: Date.now()});
 });
 
-router.post('/step1', function(req, res, next) {
+router.post('/test', function(req, res, next) {
   const postData = req.body;
-  console.log('REQUEST RECEIVED', postData);
-  res.json({title: 'STEP1', description: 'CONGRATS! We are not fineshed..... YOU ARE TOO FAST'});
+  let message = "WRONG, try again...";
+  if(postData.myTag) {
+    message = 'CONGRATS! you have passed test #1! But mothership is not ready.... check back in 5 minutes...'
+  }
+  res.json({title: 'STEP1', description: message});
 });
 
 module.exports = router;
